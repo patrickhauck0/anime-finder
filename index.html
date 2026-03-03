@@ -4,10 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>anime-finder</title>
+    <title>Anime Finder</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="container">
+      <header>
+        <h1>🎌 Buscador de Animes</h1>
+        <p>Descubra seu próximo Isekai favorito!</p>
+      </header>
+
+      <main>
+        <section class="search-box">
+          <input type="text" id="searchInput" placeholder="Digite o nome do anime (ex: Naruto, Frieren)...">
+          <button id="searchBtn">Buscar</button>
+        </section>
+
+        <section id="results" class="results-grid"></section>
+      </main>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
