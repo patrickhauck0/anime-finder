@@ -86,7 +86,13 @@ header p { color: #999; }
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
+  transition: color 0.2s; 
+}
+
+.anime-card-div h3:hover {
+  color: #e50914;
+  text-decoration: underline;
 }
 
 .anime-card-div {
@@ -113,3 +119,13 @@ header p { color: #999; }
   margin-top: 3rem;
   font-weight: normal;
 }
+
+#homeTitle {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#homeTitle:hover {
+  color: #fff;
+}
+

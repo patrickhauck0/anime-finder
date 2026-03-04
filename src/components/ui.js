@@ -32,5 +32,21 @@ export async function renderAnimes(animes) {
         animeCardDiv.append(animeCardTitle, animeCardImg, animeCardScore);
 
         resultsContainer.appendChild(animeCardDiv);
+
+        animeCardTitle.addEventListener('click', () => {
+            try {
+                if (anime.trailer && anime.trailer.embed_url) {
+                    const videoId = anime.trailer.embed_url.split('/embed/')[1].split('?')[0];
+                    
+                    const youtubeLink = `https://www.youtube.com/watch?v=${videoId}`;
+                    
+                    window.open(youtubeLink, '_blank');
+                } else {
+                    alert('O trailer oficial desse anime não está disponível! 😢');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        });
     }
 }

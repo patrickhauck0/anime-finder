@@ -4,6 +4,7 @@ import { renderAnimes } from './components/ui.js';
 async function setupFilter() {
   const searchBoxBtn = document.getElementById('searchBtn');
   const searchBoxInput = document.getElementById('searchInput');
+  const homeTitle =  document.getElementById('homeTitle');
 
   searchBoxBtn.addEventListener('click', async () => {
     const textInput = searchBoxInput.value;
@@ -24,6 +25,14 @@ async function setupFilter() {
       searchBoxBtn.click();
     }
   });
+
+  homeTitle.addEventListener('click', () => {
+    location.reload();
+  });
+
+  const animeOnPageLoadInitial = "Naruto";
+  const resultsInitial = await searchAnime(animeOnPageLoadInitial);
+  renderAnimes(resultsInitial);
 }
 
 setupFilter();
