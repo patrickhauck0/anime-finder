@@ -3,6 +3,16 @@ export async function renderAnimes(animes) {
 
     resultsContainer.innerHTML = '';
 
+    if (!animes || animes.length === 0) {
+        let errorMsg = document.createElement('h2');
+        errorMsg.classList.add('error-msg');
+
+        errorMsg.textContent = 'Nenhum anime encontrado. Tente outro título!';
+
+        resultsContainer.appendChild(errorMsg);
+        return;
+    }
+
     for(let anime of animes) {
         let animeCardDiv = document.createElement('div');
         animeCardDiv.classList.add('anime-card-div');

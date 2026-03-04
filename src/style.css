@@ -105,3 +105,11 @@ header p { color: #999; }
   font-size: 0.9rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
+
+.error-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #999;
+  margin-top: 3rem;
+  font-weight: normal;
+}

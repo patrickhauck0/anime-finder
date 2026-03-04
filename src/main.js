@@ -8,11 +8,21 @@ async function setupFilter() {
   searchBoxBtn.addEventListener('click', async () => {
     const textInput = searchBoxInput.value;
     
+    if (textInput === '') {
+      return;
+    }
+
     const results = await searchAnime(textInput);
 
     console.log(results);
 
     renderAnimes(results);
+  });
+
+  searchBoxInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      searchBoxBtn.click();
+    }
   });
 }
 
