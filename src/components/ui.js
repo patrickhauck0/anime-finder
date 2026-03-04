@@ -3,6 +3,16 @@ export async function renderAnimes(animes) {
 
     resultsContainer.innerHTML = '';
 
+    if (!animes || animes.length === 0) {
+        let errorMsg = document.createElement('h2');
+        errorMsg.classList.add('error-msg');
+
+        errorMsg.textContent = 'Nenhum anime encontrado. Tente outro título!';
+
+        resultsContainer.appendChild(errorMsg);
+        return;
+    }
+
     for(let anime of animes) {
         let animeCardDiv = document.createElement('div');
         animeCardDiv.classList.add('anime-card-div');
@@ -22,5 +32,21 @@ export async function renderAnimes(animes) {
         animeCardDiv.append(animeCardTitle, animeCardImg, animeCardScore);
 
         resultsContainer.appendChild(animeCardDiv);
+
+        animeCardTitle.addEventListener('click', () => {
+            try {
+                if (anime.trailer && anime.trailer.embed_url) {
+                    const videoId = anime.trailer.embed_url.split('/embed/')[1].split('?')[0];
+                    
+                    const youtubeLink = `https://www.youtube.com/watch?v=${videoId}`;
+                    
+                    window.open(youtubeLink, '_blank');
+                } else {
+                    alert('O trailer oficial desse anime não está disponível! 😢');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        });
     }
 }
