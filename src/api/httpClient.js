@@ -7,5 +7,6 @@ export async function searchAnime(query) {
     }
     catch (e) {
         console.error("Erro ao buscar anime: ", e);
+        throw e;
     }
 }

@@ -10,10 +10,17 @@ body {
   color: #ffffff;
 }
 
+main {
+  flex: 1;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -67,6 +74,7 @@ header p { color: #999; }
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: fadeUp 0.5s ease-out forwards;
 }
 
 .anime-card-div:hover {
@@ -129,3 +137,107 @@ header p { color: #999; }
   color: #fff;
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 30vh auto;
+}
+
+.logo-principal {
+  width: 250px;
+  transition: transform 0.05s linear, box-shadow 0.3s ease;
+  will-change: transform;
+  
+  --move-x: 0px;
+  --move-y: 0px;
+}
+
+.logo-principal:hover {
+  cursor: pointer;
+  transform: scale(1.1) translate(var(--move-x), var(--move-y));
+}
+
+.logo-principal:hover {
+  cursor: pointer;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #e50914;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.dynamic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.dynamic-background::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes kenBurnsEffect {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: center center;
+  }
+}
+
+.animate-bg {
+  animation: kenBurnsEffect 60s ease-in-out infinite;
+}
