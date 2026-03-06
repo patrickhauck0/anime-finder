@@ -3,7 +3,7 @@ export async function renderAnimes(animes) {
 
     resultsContainer.innerHTML = '';
 
-    if (!animes || animes.length === 0) {
+    if (animes.length === 0) {
         let errorMsg = document.createElement('h2');
         errorMsg.classList.add('error-msg');
 
@@ -49,4 +49,29 @@ export async function renderAnimes(animes) {
             }
         });
     }
+}
+
+export function renderApiError() {
+    const resultsContainer = document.querySelector('#results');
+    resultsContainer.innerHTML = '';
+
+    let errorContainer = document.createElement('div');
+    errorContainer.style.gridColumn = '1 / -1';
+    errorContainer.style.textAlign = 'center';
+    errorContainer.style.marginTop = '2rem';
+
+    let errorImg = document.createElement('img');
+    errorImg.src = '/api_broke.svg';
+    errorImg.style.width = '250px';
+    errorImg.style.marginBottom = '20px';
+
+    let errorMsg = document.createElement('h2');
+    errorMsg.classList.add('error-msg');
+    errorMsg.style.marginTop = '0';
+
+    errorMsg.textContent = 'Não conseguimos nos conectar à base de dados. Tente novamente mais tarde! 🛠️';
+
+    errorContainer.append(errorImg, errorMsg);
+
+    resultsContainer.appendChild(errorContainer);
 }

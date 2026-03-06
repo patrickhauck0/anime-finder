@@ -3,16 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="referrer" content="no-referrer">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="stylesheet" href="src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime Finder</title>
   </head>
   <body>
+    <div id="dynamicBg" class="dynamic-background"></div>
+
     <div class="container">
       <header>
-        <h1 id="homeTitle">🎌 Buscador de Animes</h1>
-        <p>Descubra seu próximo Isekai favorito!</p>
+        <img src="/logo.svg" id="logo-principal" class="logo-principal" alt="Anime Finder Logo">
+        <p>Pesquise por seu anime ou correlatos</p>
       </header>
 
       <main>
@@ -21,8 +23,19 @@
           <button id="searchBtn">Buscar</button>
         </section>
 
+        <div id="loader" class="loader" style="display: none;"></div>
+
         <section id="results" class="results-grid"></section>
       </main>
+
+      <footer>
+        <p>Desenvolvido por <strong>Patrick Hauck</strong></p>
+        <p>Dados fornecidos pela <a href="https://jikan.moe/" target="_blank">Jikan API</a></p>
+        <div class="social-links">
+          <a href="https://github.com/patrickhauck0" target="_blank">GitHub</a> | 
+          <a href="https://www.linkedin.com/in/patrick-hauck-4672a2200/" target="_blank">LinkedIn</a>
+        </div>
+      </footer>
     </div>
 
     <script type="module" src="/src/main.js"></script>
