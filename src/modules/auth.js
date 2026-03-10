@@ -100,6 +100,6 @@ export function setupAuth() {
 
   logoutBtn.addEventListener('click', async () => {
     await supabase.auth.signOut();
-    homeTitle.click(); 
+    location.reload(); 
   });
 }

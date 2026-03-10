@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -17,6 +17,7 @@ main {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 100px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -159,7 +160,8 @@ header p { color: #999; }
 }
 
 .logo-principal {
-  width: 250px;
+  margin-top: 10px;
+  width: 120px;
   transition: transform 0.05s linear, box-shadow 0.3s ease;
   will-change: transform;
   
@@ -251,7 +253,7 @@ footer a:hover {
 }
 
 .nav-login-btn {
-  position: absolute;
+  position: relative;
   right: 0;
   background: transparent;
   border: 1px solid #e50914;
@@ -265,6 +267,29 @@ footer a:hover {
 
 .nav-login-btn:hover {
   background: #e50914;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link.active {
+  color: #e50914;
 }
 
 .auth-box {
@@ -347,7 +372,7 @@ footer a:hover {
 
 /* USER PROFILE (avatar)  */
 .user-profile {
-  position: absolute;
+  position: relative;
   right: 0;
   display: flex;
   align-items: center;
@@ -382,4 +407,80 @@ footer a:hover {
 
 .logout-btn:hover {
   color: #e50914;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+
+#aiInput {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: white;
+  resize: none;
+}
+
+#aiInput:focus {
+  outline: none;
+  border-color: #e50914;
+}
+
+#frierenImg {
+  max-width: 800px;
+  animation: fadeUp 0.5s ease-out;
+  transition: transform 0.05s linear;
+  will-change: transform;
+  --move-x: 0px;
+  --move-y: 0px;
+}
+
+#frierenImg:hover {
+  transform: scale(1.02) translate(var(--move-x), var(--move-y));
+}
+
+#aiBtn {
+  padding: 0 30px;
+  height: 60px;
+  background: linear-gradient(135deg, #FF2A7A, #FF8C00);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 42, 122, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#aiBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.6);
+  filter: brightness(1.1);
+}
+
+#aiBtn:active {
+  transform: translateY(0);
+}
+
+.ai-box {
+  align-items: flex-start;
 }

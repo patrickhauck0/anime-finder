@@ -5,37 +5,57 @@
     <meta name="referrer" content="no-referrer">
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="stylesheet" href="src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime Finder</title>
   </head>
   <body>
     <div id="dynamicBg" class="dynamic-background"></div>
 
-    <div class="container">
-      <header>
-        <div class="header-top">
-          <img src="/logo.svg" id="logo-principal" class="logo-principal" alt="Anime Finder Logo">
-          
-          <button id="navLoginBtn" class="nav-login-btn">👤 Login</button>
-          
-          <div id="userProfile" class="user-profile" style="display: none;">
-            <img id="userAvatar" src="" alt="Avatar do Usuário" class="user-avatar">
-            <button id="logoutBtn" class="logout-btn">Sair</button>
-          </div>
-        </div>
-      </header>
+    <header class="navbar">
+      <div class="nav-brand">
+        <img src="/logo.svg" id="logo-principal" class="logo-principal" alt="Anime Finder Logo">
+      </div>
 
-      <main>
+      <nav class="nav-links">
+        <button id="btnNormalMode" class="nav-link active">Busca Normal</button>
+        <button id="btnAiMode" class="nav-link">Recomendação Inteligente ✨</button>
+      </nav>
+
+      <div class="nav-auth">
+        <button id="navLoginBtn" class="nav-login-btn">👤 Login</button>
+        <div id="userProfile" class="user-profile" style="display: none;">
+          <img id="userAvatar" src="" alt="Avatar do Usuário" class="user-avatar">
+          <button id="logoutBtn" class="logout-btn">Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <main class="main-content">
+        
         <div id="home-view">
-          <section class="search-box">
+          
+          <section class="search-box" id="normalSearchBox">
             <input type="text" id="searchInput" placeholder="Digite o nome do anime (ex: Naruto, Frieren)...">
             <button id="searchBtn">Buscar</button>
           </section>
 
-          <div id="loader" class="loader" style="display: none;"></div>
+          <section class="search-box ai-box" id="aiSearchBox" style="display: none;">
+            <textarea id="aiInput" placeholder="Ex: Quero um isekai onde o protagonista reencarna como um monstro..."></textarea>
+            <button id="aiBtn">Recomendar</button>
+          </section>
 
+          <div id="loader" class="loader" style="display: none;"></div>
           <section id="results" class="results-grid"></section>
+
+          <div id="aiWelcome" style="display: none; text-align: center; margin-top: 4rem;">
+            <img src="/frieren-finder.svg" id="frierenImg" alt="IA Pronta para Ajudar">
+            <h3 style="color: #fff; margin-top: 1rem; font-size: 1.5rem;">Deixe a magia acontecer!</h3>
+            <p style="color: #999;">Descreva o que você quer assistir e a IA fará o resto.</p>
+          </div>
         </div>
+
         <div id="auth-view" style="display: none;">
           <div class="auth-box">
             <h2>Acesse sua Conta</h2>
