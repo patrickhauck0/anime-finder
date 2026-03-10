@@ -21,7 +21,6 @@ export async function setupSearch() {
     try {
       const results = await searchAnime(textInput);
 
-      console.log(results);
       renderAnimes(results);
 
       if (results && results.length > 0) {
