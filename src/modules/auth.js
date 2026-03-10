@@ -27,7 +27,7 @@ export function setupAuth() {
     }
 
     authMessage.style.color = '#FFF';
-    authMessage.textContent = 'Criando conta... ⏳';
+    authMessage.textContent = 'Criando conta...';
 
     // Supabase function for register account
     const { data, error } = await supabase.auth.signUp({
@@ -58,7 +58,7 @@ export function setupAuth() {
     }
 
     authMessage.style.color = '#FFF';
-    authMessage.textContent = 'Autenticando... ⏳';
+    authMessage.textContent = 'Autenticando...';
 
     // Supabase function for login account
 
@@ -72,9 +72,7 @@ export function setupAuth() {
       authMessage.textContent = 'E-mail ou senha incorretos!';
     } else {
       authMessage.style.color = '#4CAF50';
-      authMessage.textContent = 'Login efetuado com sucesso! 🎉';
-
-      console.log("Sessão do Usuário:", data.session);
+      authMessage.textContent = 'Login efetuado com sucesso!';
     }
   });
 
