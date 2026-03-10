@@ -20,7 +20,7 @@
 O **Anime Finder** é uma aplicação web que combina dois modos de descoberta de animes:
 
 - **🔍 Busca Normal** — Pesquise qualquer anime pelo título e veja informações como poster, score e trailer oficial, com dados fornecidos pela [Jikan API](https://jikan.moe/) (wrapper não oficial do MyAnimeList).
-- **✨ Recomendação Inteligente** — Descreva em linguagem natural o que você quer assistir (ex: *"um isekai com protagonista overpowered em um mundo de fantasia"*) e a IA retorna 3 recomendações personalizadas. Exclusivo para usuários autenticados.
+- **✨ Recomendação Inteligente** — Descreva em linguagem natural o que você quer assistir (ex: *"um isekai com protagonista overpowered em um mundo de fantasia"*) e a IA retorna recomendações personalizadas. Exclusivo para usuários autenticados.
 
 ---
 
@@ -52,7 +52,7 @@ O **Anime Finder** é uma aplicação web que combina dois modos de descoberta d
 |---|---|
 | **Supabase Auth** | Cadastro, login e gerenciamento de sessão |
 | **Supabase Edge Functions (Deno)** | Função serverless `recommend-anime` |
-| **Google Gemini 2.0 Flash** | Geração das recomendações de anime |
+| **Google Gemini 3.1 Flash Lite** | Geração das recomendações de anime |
 | **Jikan API** | Dados públicos de animes (MyAnimeList) |
 
 ---
