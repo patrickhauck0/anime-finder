@@ -246,7 +246,7 @@ footer a:hover {
 
 .header-top {
   display: flex;
-  justify-content: center; /* Mantém a logo no meio por padrão */
+  justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
@@ -255,9 +255,9 @@ footer a:hover {
 .nav-login-btn {
   position: relative;
   right: 0;
-  background: transparent;
-  border: 1px solid #e50914;
-  color: #fff;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #525252;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -267,6 +267,8 @@ footer a:hover {
 
 .nav-login-btn:hover {
   background: #e50914;
+  border: 1px solid #e50914;
+  color: #fff;
 }
 
 .nav-links {
@@ -483,4 +485,99 @@ footer a:hover {
 
 .ai-box {
   align-items: flex-start;
+}
+
+/* Responsive: 768px - Menu Drawer */
+
+.mobile-menu-btn {
+  background: none; border: none; color: white;
+  font-size: 1.8rem; cursor: pointer; display: none;
+  margin-right: 10px;
+}
+
+.drawer-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7); z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.drawer-content {
+  position: absolute; top: 0; right: 0; width: 280px; height: 100%;
+  background: #141414; border-left: 1px solid #333;
+  display: flex; flex-direction: column;
+  animation: slideInRight 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.drawer-header {
+  padding: 20px; display: flex; align-items: center; gap: 15px;
+  border-bottom: 1px solid #333; position: relative;
+}
+
+.drawer-avatar { width: 50px; height: 50px; border-radius: 50%; }
+.drawer-name { color: white; font-weight: bold; font-size: 1.1rem; }
+.close-drawer-btn {
+  position: absolute; right: 20px; background: none; border: none;
+  color: #999; font-size: 1.5rem; cursor: pointer;
+}
+
+.drawer-body { padding: 20px 0; display: flex; flex-direction: column; flex-grow: 1; }
+.drawer-nav-btn {
+  background: none; border: none; color: #ccc; padding: 15px 20px;
+  text-align: left; font-size: 1.1rem; cursor: pointer; transition: 0.2s;
+  display: flex; align-items: center; gap: 10px;
+}
+.drawer-nav-btn.active, .drawer-nav-btn:hover { color: #FF8C00; background: rgba(255, 140, 0, 0.1); border-left: 4px solid #FF8C00; }
+
+.drawer-footer { padding: 20px; border-top: 1px solid #333; }
+.drawer-logout-btn {
+  width: 100%; padding: 12px; background: #e50914; color: white;
+  border: none; border-radius: 4px; font-weight: bold; cursor: pointer;
+}
+
+/* Responsive: 768px - Interface */
+
+@media (max-width: 768px) {
+  .navbar { justify-content: space-between; position: relative; padding: 15px; }
+  .nav-links { display: none; }
+  .nav-brand { position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-brand img { height: 40px; }
+  
+  #userProfile { display: none !important; } 
+  .mobile-menu-btn.logged-in { display: block !important; }
+
+  .nav-login-btn { padding: 8px 15px; font-size: 0.9rem; }
+
+  .nav-auth {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .search-box { flex-direction: column; gap: 10px; width: 100%; padding: 0 15px; }
+  .search-box input, .search-box textarea { width: 100%; border-radius: 8px; }
+  .search-box button, #aiBtn { 
+    width: 100%; 
+    height: 50px;
+    border-radius: 8px; 
+    font-size: 1rem;
+  }
+
+  .results-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    padding: 10px;
+  }
+  .anime-card img { height: 220px; }
+  .anime-title { font-size: 0.85rem; padding: 8px; }
+
+  #aiWelcome { margin-top: 2rem !important; padding: 0 20px; }
+  #frierenImg { max-width: 220px !important; }
+  #aiWelcome h3 { font-size: 1.3rem !important; }
+  #aiWelcome p { font-size: 0.9rem !important; }
 }

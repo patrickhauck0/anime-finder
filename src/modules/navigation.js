@@ -9,11 +9,11 @@ export function setupNav() {
     if (homeView.style.display !== 'none') {
       homeView.style.display = 'none';
       authView.style.display = 'block';
-      navLoginBtn.textContent = '🏠 Voltar';
+      navLoginBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Voltar';
     } else {
       homeView.style.display = 'block';
       authView.style.display = 'none';
-      navLoginBtn.textContent = '👤 Login';
+      navLoginBtn.innerHTML = '<i class="fa-solid fa-user"></i> Login';
     }
   });
 }
